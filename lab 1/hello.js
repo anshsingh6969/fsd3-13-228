@@ -15,3 +15,4 @@ sayHello("sallu bhai");
 console.log(sum(2,3));
 Hello("danish bhai");
 console.log(findSum(2,6));
+//write a function to take a number between 0 to 9 and return in words
