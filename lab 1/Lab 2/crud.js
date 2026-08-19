@@ -81,7 +81,8 @@ async function main() {
                 break;
 
             case '3':
-                await deleteFromCart(101);
+                let remove = await cin.question("entger the product to be removed ");
+                await deleteFromCart(remove);
                 console.log("removed items");
                 break;
 
