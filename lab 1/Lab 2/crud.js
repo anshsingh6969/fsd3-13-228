@@ -19,7 +19,12 @@ const getCart = async () => {
 
 const addToCart = async (item) => {
     const products = await getCart();
-    products.push(item);
+    const productFound = products.findIndex(product => product.id == item.id);
+    if (productFound != -1) {
+        products[productFound].quantity += item.quantity;
+    } else {
+        products.push(item);
+    }
     await saveCart(products);
 };
 
