@@ -7,7 +7,7 @@ const server = http.createServer((req, res) => {
         res.setHeader("Content-Type", "application/json");
         res.end(JSON.stringify({count: data.length, data}));
         }
-    } else if(req.url === "/"&&req.method === "POST") {
+     else if(req.url === "/"&&req.method === "POST") {
         res.statusCode = 200;
         res.end("post request")
     }
@@ -19,7 +19,7 @@ const server = http.createServer((req, res) => {
         res.statusCode = 200;
         res.end("delete request")
     }
-)
+})
 
 server.listen(3000, () => {
     console.log("pprg6 is runninggggggggg.............")
