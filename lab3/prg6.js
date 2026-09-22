@@ -7,15 +7,17 @@ const server = http.createServer((req, res) => {
         res.setHeader("Content-Type", "application/json");
         res.end(JSON.stringify({count: data.length, data}));
         }
-     else if(req.url === "/"&&req.method === "POST") {
+     else if(req.url === "/api/v1/products"&&req.method === "POST") {
         res.statusCode = 200;
         res.end("post request")
     }
-    else if(req.url === "/"&&req.method === "PUT") {
+    else if(req.url === "/api/v1/products "&&req.method === "PUT") {
         res.statusCode = 200;
         res.end("put request")
     }
-    else if(req.url === "/"&&req.method === "DELETE") {
+    else if(req.url.startsWith( "/api/v1/products/")&&req.method === "DELETE") {
+        const pid=Number(req.url.split("/").pop());
+        
         res.statusCode = 200;
         res.end("delete request")
     }

@@ -9,6 +9,16 @@ export const getAllProducts=()=>{
 }
 export const addProduct =(item)=> {
    item.id=nextId++;
-   product.push(item);
+   products.push(item);
    return item;
+}
+export const deleteProduct=(pid)=>{
+    const index=products.findIndex((p)=>p.id===pid);
+    if(index!==-1){
+        return false;
+        products.splice(index,1);
+        console.log("product deleted successfully",products);
+        return true;
+    }
+    return null;
 }
