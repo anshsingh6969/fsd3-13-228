@@ -1,40 +1,111 @@
-localhost-URL
-127.0.01-IP address
+# crud operation 
+c:- create/add/insert
+r:-retrive/view/get
+u:-update/edit
+d:- delete/remove
+## fs:- file system :- it is a node library and interact directly with os.
+it direct connect with client os rater than browser 
+## major task of fs module  
+- Reading and writing files
+    - readFiles()
+    - writeFile()
+    - appendFile()
+- DIRECTORY MANAGMENT
+    - mkdir()
+    - rmdir() - depricated
+    - rm()
+    - readdir()
+- metadta/Information
+    - stat()
+    - Lstat()
+    - Fstat()
+- Watching for changes
+    - watch ()
+    - watch files()
+    - unwatchfile()
+- streaming large file
+    - createReadsStream()
+    - createWriteStream()
+- File Operations
+    - rename()
+    - truncate()
+    - unlink()
+    - link()
+    - syslink()
+<!-- CRUD OPERATION-->
+each item id, name, price , quantity
+<!-- opERATIONS -->
+1. add to cart
+2. show cart
+3. remove items from cart
+4. update quantity from cart
+5. checkout
+## Node Package Manager (NPM)
 
-ctrl+c-stop the server
+used to install, run, uninstall any program/project and package
 
-every request from client has a pair of {request,response}
-npm- Node Package Manager
-##  Node Package Manager(NPM)
-used to install,run,uninstall any program/project and package
-- npm install<packageName>
-- npm uninstall<packageName>
+- npm install <packagename>
+- npm uninstall <packagename>
 
-to use npm,the project must be npm project,
-to create npm project we can use 
-- npm init-y
-- update package.jason,set type='module'
-- it creates a package.jason file automatically
-package.jason holds all the minformation related to install packages from npm
+to use npm, the project must be npm project,
+to create npm project we can use
+
+- npm init -y
+- it creates a package.json file automatically
+  package.json holds all the information related to install
+  packages from npm
 - it also creates a folder node_modules automatically
-- node_modules holds the package/library filles
-- generally we ignore the node_modules by .gitignore
+- node_modules holds the package/library files
+- generally we ignore the node_modules by .gitignoree  
+## Status Codes
+- 200 -> 0k
+- 201 -> created
+- 400 -> bad req
+- 403 -> forbidden
+- 404 -> not found
+- 500 ->internal server error
 
-nodemon - it restart the sever automatically when file changes
-to install
->npm i nodemon -D
 
-Note: -D flag willinstall this package as developer dependency
-- to execute any program,update the package.jason file then start the server as 
-<b>npm run dev</b>
+# Content Type
 
-## Content Type
 - text/plain
 - text/html
 - application/json
-- 
+- text/css
+
+The content type and status code can be send back to client by two ways.
+
+1. res.writeHead
+2. res.setHeader
+3. res.statusCode
+RESPONSE AS HTML CONTENT
+1. response.end
+end("any html content")
 
 
+2. html file
+- read by create read stream
+- file with res
 
-# HEADERS
-headers are used to tell the client about the type of data send by the sever it may be html file ,jason data,plain text files,css file,any tokens(for login)
+
+## SEND HTML FILE TO CLIENT
+1. html file 
+  - read html file using createReadStream
+  - pipe it with res object
+
+2. html content 
+send any html tags/content by using 
+res.end('<any html tag>')
+## JSON
+server return data only not html contents because html content will be wriyyen by fronted devloper.
+the data is in json format 
+json always store data in key , value pair enclosed by curly brackets { }
+array can be stored in []
+one pair of curly bracket will represent only one object and its property will be separated by ","  
+{
+    id: 1,
+    name: 'mobile',
+    price:25000,
+    rating: 4.5,
+    review:200
+}
