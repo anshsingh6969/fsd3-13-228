@@ -109,3 +109,8 @@ one pair of curly bracket will represent only one object and its property will b
     rating: 4.5,
     review:200
 }
+
+GET-> no parameter will pass to the server when we recieve all items 
+POST-> to add record we pass the value from body section in json format of api tester 
+DELETE-> to delete any product we pass parameter that is id of the product from url/id
+UPDATE(put/patch)-> to update any product we pass id from url and data to update from body

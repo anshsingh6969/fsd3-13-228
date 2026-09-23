@@ -22,3 +22,19 @@ export const deleteProduct=(pid)=>{
     }
     return null;
 }
+export const updateProduct =(pid,updateItem)=>{
+       const index=products.findIndex((p)=>p.id===pid);
+       if(index!==-1){
+       return false;
+       }
+       updateItem.id=pid;
+      products[index]=updateItem;
+       return true;
+    };
+    export const getProductById=(pid)=>{
+        const index=products.findIndex((p)=>p.id===pid);
+       if(index!==-1){
+       return false;
+       }
+      return  products[index];
+    }
